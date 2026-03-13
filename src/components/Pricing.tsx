@@ -5,7 +5,9 @@ import { motion } from "framer-motion";
 const plans = [
   {
     name: "Página Única",
+    oldPrice: "397",
     price: "197",
+    discount: "50% OFF",
     features: [
       "Landing page até 3 seções",
       "Design responsivo (mobile perfeito)",
@@ -16,7 +18,9 @@ const plans = [
   },
   {
     name: "Site Completo",
+    oldPrice: "599",
     price: "297",
+    discount: "50% OFF",
     features: [
       "Site completo até 5 seções",
       "Design exclusivo + animações",
@@ -32,7 +36,9 @@ const plans = [
   },
   {
     name: "Site Premium",
+    oldPrice: "897",
     price: "497",
+    discount: "44% OFF",
     features: [
       "Site multi-página completo",
       "Design exclusivo + animações avançadas",
@@ -61,15 +67,15 @@ export default function Pricing() {
             className="font-[family-name:var(--font-jakarta)] font-black text-white mb-4"
             style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)" }}
           >
-            <span className="gradient-text">Investimento</span>
+            <span className="gradient-text">Oferta especial</span>
           </h2>
           <p className="text-[#A1A1AA] text-sm sm:text-base max-w-xl mx-auto mb-6">
-            Transparência total. Sem surpresa no final.
+            Preços promocionais por tempo limitado. Garanta o seu antes que volte ao normal.
           </p>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20">
-            <span className="text-sm">⚠️</span>
-            <span className="text-sm text-amber-400">
-              Apenas 2 vagas abertas por mês
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20">
+            <span className="text-sm">🔥</span>
+            <span className="text-sm text-red-400 font-semibold">
+              Promoção ativa — apenas 2 vagas este mês
             </span>
           </div>
         </motion.div>
@@ -95,7 +101,7 @@ export default function Pricing() {
                     {/* Spinning border for popular */}
                     <div className="absolute -inset-px rounded-2xl opacity-30 blur-md" style={{ background: "var(--grad-main)" }} />
                     <div className="absolute top-0 right-0 px-4 py-1.5 text-xs font-semibold text-white rounded-bl-xl" style={{ background: "var(--grad-main)" }}>
-                      Mais escolhido
+                      🔥 Melhor custo-benefício
                     </div>
                   </>
                 )}
@@ -104,8 +110,27 @@ export default function Pricing() {
                   <h3 className="font-[family-name:var(--font-jakarta)] font-bold text-white text-xl mb-2">
                     {plan.name}
                   </h3>
+
+                  {/* Discount badge */}
+                  <div className="mb-3">
+                    <span className={`inline-block px-2.5 py-1 text-[11px] font-bold rounded-full ${
+                      plan.popular
+                        ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
+                        : "bg-white/[0.06] text-[#A1A1AA] border border-white/[0.08]"
+                    }`}>
+                      {plan.discount}
+                    </span>
+                  </div>
+
+                  <div className="flex items-baseline gap-2 mb-1">
+                    <span className="text-base text-[#A1A1AA]/60 line-through font-medium">
+                      R$ {plan.oldPrice}
+                    </span>
+                  </div>
                   <div className="flex items-baseline gap-1 mb-6">
-                    <span className="text-3xl sm:text-4xl font-[family-name:var(--font-jakarta)] font-black gradient-text">
+                    <span className={`text-3xl sm:text-4xl font-[family-name:var(--font-jakarta)] font-black ${
+                      plan.popular ? "gradient-text" : "text-white"
+                    }`}>
                       R$ {plan.price}
                     </span>
                   </div>
