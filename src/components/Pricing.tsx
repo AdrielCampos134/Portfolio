@@ -153,6 +153,11 @@ export default function Pricing() {
                     href="https://wa.me/5566996626237"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => {
+                      if (typeof window !== "undefined" && typeof (window as unknown as {fbq?: (...a: unknown[]) => void}).fbq === "function") {
+                        (window as unknown as {fbq: (...a: unknown[]) => void}).fbq("track", "Lead", { content_name: plan.name });
+                      }
+                    }}
                     className={`w-full flex items-center justify-center py-3.5 rounded-full text-sm font-semibold text-white min-h-[48px] ${
                       plan.popular ? "" : "border border-white/[0.15]"
                     }`}

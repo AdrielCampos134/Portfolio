@@ -58,6 +58,10 @@ export default function Contact() {
 
     const text = encodeURIComponent(`Olá Adriel! Vim pelo seu portfólio.\n\n${lines}`);
     window.open(`https://wa.me/5566996626237?text=${text}`, "_blank");
+    // Meta Pixel — Contact event
+    if (typeof window !== "undefined" && typeof (window as unknown as {fbq?: (...a: unknown[]) => void}).fbq === "function") {
+      (window as unknown as {fbq: (...a: unknown[]) => void}).fbq("track", "Contact");
+    }
     setStatus("success");
     setFormData({ name: "", phone: "", email: "", message: "" });
   };
