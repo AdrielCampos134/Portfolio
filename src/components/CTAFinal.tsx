@@ -10,7 +10,7 @@ export default function CTAFinal() {
         className="absolute inset-0 animate-aurora"
         style={{
           background:
-            "linear-gradient(135deg, rgba(124,58,237,0.15), rgba(37,99,235,0.1), rgba(6,182,212,0.08), rgba(124,58,237,0.12))",
+            "linear-gradient(135deg, rgba(147,51,234,0.12), rgba(59,130,246,0.08), rgba(6,182,212,0.06), rgba(147,51,234,0.1))",
           backgroundSize: "300% 300%",
         }}
       />
@@ -20,18 +20,17 @@ export default function CTAFinal() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px" }}
         >
           <h2
             className="font-[family-name:var(--font-jakarta)] font-black text-white mb-6 leading-tight"
             style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)" }}
           >
-            Seu negócio merece um site que{" "}
-            <span className="gradient-text">trabalha por você.</span>
+            Um site bom não é <span className="gradient-text">só enfeite.</span>
           </h2>
           <p className="text-[#A1A1AA] text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-            Enquanto você dorme, seu site está lá — apresentando seu negócio e
-            convertendo visitantes em clientes.
+            É a vitrine do seu trabalho 24 horas por dia. Vamos colocar uma 
+            versão profissional do seu negócio na internet?
           </p>
 
           <motion.a

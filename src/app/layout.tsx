@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import FloatingWhatsApp from "../components/FloatingWhatsApp";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -74,6 +75,7 @@ export default function RootLayout({
         </noscript>
         <div className="noise-overlay" />
         {children}
+        <FloatingWhatsApp />
       </body>
     </html>
   );

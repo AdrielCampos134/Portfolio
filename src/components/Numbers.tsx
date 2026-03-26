@@ -20,7 +20,7 @@ function Counter({
   decimals?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: false, margin: "-80px" });
   const [display, setDisplay] = useState("0");
 
   useEffect(() => {
@@ -68,7 +68,7 @@ export default function Numbers() {
               key={i}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
+              viewport={{ once: false, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="text-center"
             >

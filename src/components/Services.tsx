@@ -33,14 +33,14 @@ const services = [
   },
   {
     emoji: "📱",
-    title: "Landing Pages de Alta Conversão",
+    title: "Landing Pages Diretas",
     description:
-      "Uma página, um objetivo: fazer o visitante agir. CTA claro, copy afiada, carregamento rápido.",
+      "Uma página, um objetivo. Copy clara, layout que prende a atenção e carregamento rápido para não perder ninguém.",
     features: [
-      "Copywriting orientado a conversão",
-      "Seção de benefícios e diferenciais",
-      "Prova social (depoimentos, números)",
-      "Múltiplos CTAs estratégicos",
+      "Textos focados no seu público",
+      "Seção de benefícios clara",
+      "Prova social e resultados",
+      "Botões bem posicionados",
       "Velocidade máxima",
     ],
     color: "#2563EB",
@@ -49,13 +49,13 @@ const services = [
     emoji: "🔧",
     title: "Manutenção e Melhorias",
     description:
-      "Site lento, feio no celular ou desatualizado? Faço diagnóstico completo e entrego melhor do que estava.",
+      "Seu site atual tá lento, quebrando no celular ou com visual velho? Dou uma geral no código e deixo ele rápido e bonito de novo.",
     features: [
-      "Auditoria completa",
-      "Correção de bugs",
-      "Otimização mobile",
-      "Atualização de conteúdo",
-      "Melhoria de performance",
+      "Revisão completa",
+      "Correção de bugs chatos",
+      "Ajustes para mobile",
+      "Atualização de textos e fotos",
+      "Melhoria de velocidade",
     ],
     color: "#06B6D4",
   },
@@ -68,14 +68,14 @@ export default function Services() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px" }}
           className="text-center mb-14"
         >
           <h2
             className="font-[family-name:var(--font-jakarta)] font-black text-white mb-4"
             style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)" }}
           >
-            O que eu <span className="gradient-text">entrego</span>
+            O que <span className="gradient-text">sei fazer bem</span>
           </h2>
           <p className="text-[#A1A1AA] text-sm sm:text-base max-w-xl mx-auto">
             Sem template. Feito do zero para o seu negócio.
@@ -88,7 +88,7 @@ export default function Services() {
               key={i}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
+              viewport={{ once: false, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               whileHover={{ y: -8, scale: 1.01 }}
               className="relative bg-[#161616] rounded-2xl p-6 sm:p-8 border border-white/[0.08] group overflow-hidden"

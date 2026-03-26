@@ -5,20 +5,20 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 const phrases = [
-  "Landing Pages que vendem.",
+  "Landing pages que vendem mais.",
   "Sites para clínicas e consultórios.",
-  "Sites para restaurantes e food.",
-  "Empresas que precisam aparecer online.",
-  "Resultados reais para seu negócio.",
+  "Presença digital para restaurantes.",
+  "O site que sua empresa precisa.",
+  "Design focado no que importa.",
 ];
 
 const codeSnippets = [
   { text: "<div className='hero'>", top: "12%", left: "8%", delay: 0 },
   { text: "const site = await build()", top: "25%", right: "6%", delay: 0.5 },
   { text: "export default Page", top: "65%", left: "5%", delay: 1 },
-  { text: "npx next build ✓", top: "78%", right: "10%", delay: 1.5 },
+  { text: "npm run build ✓", top: "78%", right: "10%", delay: 1.5 },
   { text: "<Component {...props} />", top: "42%", left: "3%", delay: 2 },
-  { text: "deploy → vercel.app", top: "50%", right: "4%", delay: 2.5 },
+  { text: "deploy → pronto", top: "50%", right: "4%", delay: 2.5 },
 ];
 
 export default function Hero() {
@@ -59,7 +59,7 @@ export default function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 60% 50% at 50% 40%, rgba(124,58,237,0.15), rgba(37,99,235,0.08) 50%, transparent 80%)",
+              "radial-gradient(ellipse 60% 50% at 50% 40%, rgba(147, 51, 234, 0.12), rgba(59, 130, 246, 0.06) 50%, transparent 80%)",
           }}
         />
       </div>
@@ -69,9 +69,9 @@ export default function Hero() {
         <motion.span
           key={i}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.12 }}
+          animate={{ opacity: 0.1 }}
           transition={{ delay: snippet.delay, duration: 1 }}
-          className="absolute hidden lg:block text-xs font-[family-name:var(--font-jetbrains)] text-white/10 select-none animate-float"
+          className="absolute hidden lg:block text-xs font-[family-name:var(--font-jetbrains)] text-white/20 select-none animate-float"
           style={{
             top: snippet.top,
             left: snippet.left,
@@ -110,8 +110,10 @@ export default function Hero() {
             <br />
             <span className="text-white">Eu crio sites que</span>
             <br />
-            <span className="gradient-text">{displayed}</span>
-            <span className="cursor-blink text-[#7C3AED]">|</span>
+            <span className="block min-h-[3em] sm:min-h-[1.5em] mt-2 sm:mt-4 w-full">
+              <span className="gradient-text">{displayed}</span>
+              <span className="cursor-blink text-[#9333EA]">|</span>
+            </span>
           </h1>
         </motion.div>
 
@@ -120,11 +122,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-[#A1A1AA] text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-[#A1A1AA] text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-medium"
         >
-          Estudo desenvolvimento web há mais de 3 anos, curso o 7º período de
-          Engenharia de Software e agora estou pronto para transformar seu
-          negócio com sites rápidos, bonitos e que convertem.
+          Desenvolvedor web há mais de 3 anos e estudante de Engenharia de
+          Software. Construo sites rápidos, visualmente premium e focados 
+          no que realmente importa: resultado para o seu negócio.
         </motion.p>
 
         {/* CTAs */}
@@ -138,7 +140,7 @@ export default function Hero() {
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             href="#projetos"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold text-sm sm:text-base min-h-[48px]"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold text-sm sm:text-base min-h-[48px] shadow-lg shadow-purple-500/20"
             style={{ background: "var(--grad-main)" }}
           >
             Ver meus projetos ↓
@@ -149,9 +151,9 @@ export default function Hero() {
             href="https://wa.me/5566996626237"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold text-sm sm:text-base border border-white/[0.15] hover:border-white/30 transition-colors min-h-[48px]"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold text-sm sm:text-base border border-white/[0.15] bg-white/[0.02] hover:bg-white/[0.06] hover:border-white/30 transition-colors min-h-[48px]"
           >
-            Falar no WhatsApp
+            Fazer orçamento no WhatsApp
           </motion.a>
         </motion.div>
 

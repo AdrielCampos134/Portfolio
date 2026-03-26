@@ -60,7 +60,7 @@ export default function Pricing() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px" }}
           className="text-center mb-6"
         >
           <h2
@@ -87,7 +87,7 @@ export default function Pricing() {
                 key={plan.name}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
+                viewport={{ once: false, margin: "-80px" }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 whileHover={{ y: -8, scale: 1.01 }}
                 className={`relative rounded-2xl p-6 sm:p-8 border overflow-hidden flex flex-col ${
@@ -173,7 +173,7 @@ export default function Pricing() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="text-center mt-10 space-y-2"
         >
           <p className="text-[#A1A1AA] text-sm">

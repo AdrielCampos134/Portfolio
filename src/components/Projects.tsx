@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const projects = [
@@ -100,18 +101,14 @@ const categories = [
 ];
 
 function ProjectCard({ project }: { project: (typeof projects)[0] }) {
-  const [hovered, setHovered] = useState(false);
-
   return (
     <motion.div
       layout
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: false, margin: "-80px" }}
       whileHover={{ y: -8, scale: 1.01 }}
       transition={{ duration: 0.4 }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
       className="relative bg-[#161616] rounded-2xl overflow-hidden border border-white/[0.08] group"
     >
       {/* Glow on hover */}
@@ -122,35 +119,14 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
 
       {/* Preview area */}
       <div className="relative w-full aspect-video bg-[#111111] overflow-hidden">
-        {/* Screenshot thumbnail */}
-        <img
+        {/* Screenshot thumbnail (Optimized) */}
+        <Image
           src={project.image}
           alt={`Screenshot de ${project.name}`}
-          className="absolute inset-0 w-full h-full object-cover object-top"
-          loading="lazy"
+          fill
+          className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
-
-        {/* Live iframe on hover (desktop only) */}
-        <AnimatePresence>
-          {hovered && (
-            <motion.div
-              initial={{ opacity: 0, scale: 1.05 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-              className="absolute inset-0 hidden lg:block"
-            >
-              <div className="absolute inset-0 bg-black/20 z-10" />
-              <iframe
-                src={project.url}
-                title={project.name}
-                className="w-full h-full border-0 pointer-events-none"
-                loading="lazy"
-                sandbox="allow-scripts allow-same-origin"
-              />
-            </motion.div>
-          )}
-        </AnimatePresence>
 
         {/* Badge */}
         <div className="absolute top-3 left-3 z-20">
@@ -237,7 +213,7 @@ export default function Projects() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px" }}
           className="text-center mb-12"
         >
           <h2
@@ -256,7 +232,7 @@ export default function Projects() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="flex flex-wrap justify-center gap-2 mb-12"
         >
           {categories.map((cat) => (
@@ -294,7 +270,7 @@ export default function Projects() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px" }}
           className="text-center mt-16"
         >
           <p className="text-white text-lg font-[family-name:var(--font-jakarta)] font-bold mb-6">

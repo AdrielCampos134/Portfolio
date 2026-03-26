@@ -47,7 +47,7 @@ export default function Process() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px" }}
           className="text-center mb-14"
         >
           <h2
@@ -78,7 +78,7 @@ export default function Process() {
                   key={i}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-80px" }}
+                  viewport={{ once: false, margin: "-80px" }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="relative text-center pt-16"
                 >
@@ -115,7 +115,7 @@ export default function Process() {
                   key={i}
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-80px" }}
+                  viewport={{ once: false, margin: "-80px" }}
                   transition={{ duration: 0.5, delay: i * 0.08 }}
                   className="relative"
                 >
